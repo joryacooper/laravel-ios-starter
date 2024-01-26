@@ -111,8 +111,7 @@ return [
 
     'middleware' => [
         'web',
-        'auth.basic',
-        'superadmin',
+        'pulseuser',
     ],
 
     /*

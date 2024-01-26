@@ -7,11 +7,11 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
-class AuthorizeSuperadmin
+class AuthorizePulseUser
 {
     public function handle(Request $request, Closure $next): mixed
     {
-        if (App::environment('local') || Auth::user()->email === 'jory.a.cooper+admin@gmail.com') {
+        if (App::environment('local')) {
             return $next($request);
         }
 
