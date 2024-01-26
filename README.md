@@ -46,9 +46,9 @@ We will get the API server running on your computer for development.
      laravelsail/php82-composer:latest \
      composer install --ignore-platform-reqs
    ```
-3. Start the docker container
+3. Start the docker containers (this might take a while the first time)
     ```shell
-    ./vendor/bin/sail up
+    ./vendor/bin/sail up -d
    ```
 4. Initialize laravel application
     ```shell
@@ -71,7 +71,16 @@ We will get the iOS app running on your computer for development
     ```shell
    cd client
     ```
-2. Run the iOS App in XCode simulator
+2. Install dependencies
+    ```shell
+   npm i
+   ```
+3. Build the project
+    ```shell
+   npm run build
+   ```
+   (Select ios as the platform)
+4. Run the iOS App
     ```shell
    npm run start:ios
     ```
@@ -145,7 +154,7 @@ You need the ability to send email to your users for password reset links. For m
 [Instructions for Laravel + Mailersend.](https://laravel.com/docs/10.x/mail#mailersend-driver)
 
 ### Log Monitoring
-You should set up some sort of log monitoring tf you want to be alerted about unexpected errors, or other things happening in your app.
+You should set up some sort of log monitoring if you want to be alerted about unexpected errors, or other things happening in your app.
 
 In my apps, I have set up the Slack driver for Laravel logs. The result is that any log my app produces gets sent as a slack message. 
 

@@ -5,6 +5,7 @@
   "homepage": "https://me.jorycooper.com",
   "scripts": {
     "start": "ionic serve",
+    "build": "ionic cap build",
     "start:prod": "ionic serve --prod",
     "start:ios": "ionic cap run ios -l --external",
     "start:ios:prod": "ionic cap run ios -l --external --prod",
