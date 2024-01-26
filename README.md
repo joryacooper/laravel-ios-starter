@@ -107,7 +107,8 @@ The project has 2 main pieces:
 - /client 
   - This is where the iOS app lives. 
   - It's a standard Ionic app using Angular as the Javascript framework.
-  - I have implemented the forms and api requests needed for User authentication as well as the UI for managing an "Article" model.  
+  - I have implemented the forms and api requests needed for User authentication as well as the UI for managing an "Article" model.
+  - A good starting point is [/client/src/app/app.component.html](/client/src/app/app.component.html)
   - [Ionic Documentation](https://ionicframework.com/docs)
 
 ## Integrations
