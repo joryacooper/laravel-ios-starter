@@ -100,6 +100,8 @@ The project has 2 main pieces:
   - This is where the Laravel app lives. 
   - It's a standard Laravel 10.x app. 
   - I have implemented User authentication as well as files needed for managing an "Article" model.
+  - A good starting point is [/api/routes/api.php](/api/routes/api.php) to see api routes.
+  - [Laravel Pulse](https://pulse.laravel.com/) is installed and can be accessed locally at [localhost/pulse](http://localhost/pulse) 
   - [Laravel Documentation](https://laravel.com/docs/10.x)
     
 - /client 
