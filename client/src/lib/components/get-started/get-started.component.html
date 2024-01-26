@@ -1,0 +1,39 @@
+<ion-content (click)="onClickContent()" class="ion-padding-horizontal" color="light">
+  <div class="ion-padding-horizontal">
+    <div class="mt-5 pt-3 ion-text-center">
+      <img src="assets/icon/icon@3x.png" style="max-width: 100px; border-radius: 24px;">
+    </div>
+    <div>
+      <ion-text class=""><h1 class="fw-extra-bold mb-0">Welcome to</h1></ion-text>
+    </div>
+    <div>
+      <ion-text color="primary"><h1 class="fs-extra-large fw-extra-bold mt-0 mb-4">Articles</h1></ion-text>
+    </div>
+  </div>
+
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        Feature 1
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        Feature 2
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        Feature 3
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<app-auth-controls *ngIf="!auth.isLoggedIn" (authenticated)="onAuthenticated()"/>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/settings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Premium</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" [fullscreen]="true">
+  <div class="ion-padding-horizontal">
+    <div class="mt-3 ion-text-center">
+      <img src="assets/icon/icon@3x.png" style="max-width: 100px; border-radius: 24px;">
+    </div>
+
+    <div>
+      <ion-text *ngIf="!customer.isPro" class=""><h1 class="fw-extra-bold mb-0">Upgrade to</h1></ion-text>
+      <ion-text *ngIf="customer.isPro" class=""><h1 class="fw-extra-bold mb-0">You have</h1></ion-text>
+    </div>
+    <div>
+      <ion-text color="primary">
+        <h1 class="fs-extra-large fw-extra-bold mt-0 mb-4">Premium
+          <ion-icon name="sparkles" color="warning"></ion-icon>
+        </h1>
+      </ion-text>
+    </div>
+  </div>
+  <ng-container *ngIf="customer.isPro">
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label class="ion-text-wrap">
+          <div>
+            Pro Feature 1
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label class="ion-text-wrap">
+          <div>
+            Manage your subscription in iOS Settings.
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <ng-container *ngIf="!customer.isPro">
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label class="ion-text-wrap">
+          <h3>
+            Pro Feature 1
+          </h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+</ion-content>
+
+<ion-footer *ngIf="!customer.isPro">
+  <ion-toolbar class="ion-text-center">
+    <ion-button (click)="onMonthly()" expand="block" class="mb-2">
+      {{ currentOffer?.monthly!.product.priceString }} / month
+    </ion-button>
+    <ion-button (click)="onYearly()" expand="block">
+      {{ currentOffer?.annual!.product.priceString }} / year
+    </ion-button>
+    <ion-button
+      (click)="onRestorePurchases()"
+      size="small"
+      fill="clear">Restore purchases
+    </ion-button>
+    @if (loading) {
+      <ion-progress-bar type="indeterminate"/>
+    }
+  </ion-toolbar>
+</ion-footer>

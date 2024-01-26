@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" [fullscreen]="true">
+  <ion-list [inset]="true">
+    <ion-item [button]="true" [routerLink]="['/settings/profile']">
+      <ion-label>
+        <div>Account</div>
+        <p>{{auth.user!.email}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item [button]="true" [routerLink]="['/settings/plan']">
+      <ion-label>
+        <div>PRs Premium</div>
+        <p>{{customer.isPro ? 'Active' : 'Not active'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item [button]="true" [routerLink]="['/settings/password']">
+      <ion-label>
+        <div>Password</div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item [button]="true" (click)="onHelp()">
+      <ion-label>
+        <div>Get support</div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding-horizontal ion-padding-top">
+    <ion-button (click)="onLogOut()" expand="block" color="danger">Log out</ion-button>
+  </div>
+</ion-content>

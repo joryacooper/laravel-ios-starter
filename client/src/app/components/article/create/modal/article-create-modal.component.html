@@ -1,0 +1,18 @@
+<ion-modal #createIonModal trigger="open-article-create" [presentingElement]="elements.articleIndexPage()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="onCancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Add Article</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onSubmit()" [strong]="true">Next</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <app-article-create-form/>
+    </ion-content>
+  </ng-template>
+</ion-modal>

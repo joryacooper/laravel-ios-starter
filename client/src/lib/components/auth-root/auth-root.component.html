@@ -1,0 +1,18 @@
+@if (errorMessage) {
+  <ion-content>
+    <ion-card class="mt-5">
+      <ion-card-content>{{errorMessage}}</ion-card-content>
+      <ion-button (click)="retry()" class="mb-3 mx-3" expand="block">
+        <ion-icon slot="start" name="refresh-outline"></ion-icon> Retry
+      </ion-button>
+      <ion-button (click)="logout()" class="mb-3 mx-3" expand="block" color="danger">
+        Log out
+      </ion-button>
+    </ion-card>
+  </ion-content>
+}
+
+@if (auth.user) {
+  <ion-router-outlet></ion-router-outlet>
+}
+

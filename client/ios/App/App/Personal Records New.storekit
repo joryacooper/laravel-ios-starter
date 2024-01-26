@@ -1,0 +1,129 @@
+{
+  "identifier" : "66DB1559",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6473026457",
+    "_developerTeamID" : "SB2ZNEN24G",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 727646295.38489199,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21415963",
+      "localizations" : [
+
+      ],
+      "name" : "group-pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6473026874",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Access to premium features, paid monthly",
+              "displayName" : "PRs Premium - month",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "sub_monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "sub_monthly",
+          "subscriptionGroupID" : "21415963",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "8.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6473026857",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Access to premium features, paid yearly",
+              "displayName" : "PRs Premium - year",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "sub_yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "sub_yearly",
+          "subscriptionGroupID" : "21415963",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

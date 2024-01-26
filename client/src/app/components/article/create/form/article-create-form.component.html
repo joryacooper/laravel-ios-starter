@@ -1,0 +1,53 @@
+<form [formGroup]="form">
+  <ion-list [inset]="true" class="mt-2">
+    <ion-item>
+      <ion-grid class="w-100">
+        <ion-row class="ion-text-center mb-2">
+          <ion-input
+            #firstInput
+            aria-label="name"
+            formControlName="name"
+            class="fs-2"
+            [autocapitalize]="true"
+            placeholder="Article name"></ion-input>
+        </ion-row>
+        <ion-row class="mb-2 ion-justify-content-center">
+          <ion-segment
+            formControlName="type"
+          >
+            <ion-segment-button [value]="ArticleType.SHORT">
+              <ion-label>Short</ion-label>
+            </ion-segment-button>
+            <ion-segment-button [value]="ArticleType.LONG">
+              <ion-label>Long</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-row>
+        <ion-row class="ion-justify-content-center mb-2">
+          <small>
+            <ng-container *ngIf="form.value.type === ArticleType.SHORT">
+              Short content
+            </ng-container>
+            <ng-container *ngIf="form.value.type === ArticleType.LONG">
+              Long content
+            </ng-container>
+          </small>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-textarea
+        class="fs-small"
+        formControlName="notes"
+        aria-label="Description"
+        autocapitalize="sentences"
+        placeholder="Description"
+        [autoGrow]="true"
+        [maxlength]="255"
+      />
+    </ion-item>
+  </ion-list>
+</form>

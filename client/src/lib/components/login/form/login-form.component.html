@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ion-list [inset]="true" class="ion-margin-bottom">
+    <ion-item>
+      <ion-input
+        #firstInput
+        placeholder="Email"
+        type="email"
+        formControlName="email"
+        autocomplete="email"
+        [disabled]="pendingRequests.hasPendingRequests"
+      />
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Password"
+        type="password"
+        formControlName="password"
+        autocomplete="current-password"
+        [disabled]="pendingRequests.hasPendingRequests"
+      />
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding-start ion-padding-end mb-4">
+    <ion-button type="submit" expand="block" [disabled]="pendingRequests.hasPendingRequests">Log in</ion-button>
+  </div>
+</form>
+
+<div class="ion-text-center">
+  <ion-button (click)="onForgotPasswordAlert()" fill="clear" size="small" [disabled]="pendingRequests.hasPendingRequests">Forgot password?</ion-button>
+</div>
+
+<div class="mb-4 ion-text-center">
+  <ion-button (click)="onHelp()" fill="clear" size="small" [disabled]="pendingRequests.hasPendingRequests">Support</ion-button>
+</div>

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button id="open-article-create">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Articles
+      @if(!environment.production){
+        [Dev]
+      }
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]="['/settings']">
+        Settings
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  @if(hasArticles) {
+    <app-article-list-item *ngFor="let a of articles; trackBy:articleTrackBy" [article]="a"/>
+  } @else if (hasNoArticles) {
+    <ion-label class="ion-padding ion-text-center ion-col">
+      <p>0 items</p>
+    </ion-label>
+  }
+
+  <ion-label
+    *ngIf="articles.length >= 2 && !customerService.isPro"
+    class="ion-padding ion-text-center ion-col mb-5"
+  >
+    <p class="mb-2">{{articles.length}}/3 Articles</p>
+    <p class="px-4">Upgrade to Premium in Settings to get unlimited Articles and more.</p>
+  </ion-label>
+
+  <ion-label
+    *ngIf="errorMessage"
+    class="ion-padding ion-text-center ion-col mb-5"
+  >
+    <p>{{ errorMessage }}</p>
+  </ion-label>
+</ion-content>
+
+<ion-footer *ngIf="hasNoArticles">
+  <ion-toolbar>
+    <ion-button
+      (click)="onSupplementaryAdd()"
+      expand="block"
+    >
+      <ion-icon slot="start" name="add" size="small"></ion-icon> Add Article
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<app-article-create-modal/>

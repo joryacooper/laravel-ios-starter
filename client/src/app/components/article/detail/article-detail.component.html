@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/" text="Articles"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ng-container *ngIf="isActual">
+        <ion-button id="open-article-edit" fill="clear" color="dark" [strong]="true">
+          {{article.name}}
+          <ion-icon slot="end" size="small" name="chevron-forward"></ion-icon>
+        </ion-button>
+      </ng-container>
+      <ng-container *ngIf="!isActual">
+        {{article.name}}
+      </ng-container>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="isActual">
+    <div *ngIf="article.notes" class="mb-3 ion-text-center">
+      <ion-note class="px-3"><small>{{article.notes}}</small></ion-note>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+
+
+<app-article-edit-modal *ngIf="isActual" [article]="article"/>

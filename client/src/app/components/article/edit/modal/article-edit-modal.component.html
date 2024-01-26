@@ -1,0 +1,33 @@
+<ion-modal #modal trigger="open-article-edit" [presentingElement]="elements.articleDetailPage()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="onCancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Edit</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="onSubmit()" [strong]="true">Done</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <div class="mb-4">
+        <app-article-edit-form [article]="article"/>
+      </div>
+
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-button
+            (click)="onDelete()"
+            color="danger"
+            fill="clear"
+            class="w-100"
+          >
+            Delete Exercise
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>

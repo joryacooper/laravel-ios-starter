@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ion-list [inset]="true" class="ion-margin-bottom">
+    <ion-item>
+      <ion-input
+        #firstInput
+        placeholder="Your email"
+        type="email"
+        formControlName="email"
+        [disabled]="pendingRequests.hasPendingRequests"
+      />
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Make a password"
+        type="password"
+        formControlName="password"
+        [disabled]="pendingRequests.hasPendingRequests"
+      />
+    </ion-item>
+  </ion-list>
+
+  <div style="display: flex; justify-content: start; align-items: center;" class="ion-padding">
+    <ion-toggle formControlName="accepted" class="me-2" [disabled]="pendingRequests.hasPendingRequests"></ion-toggle>
+    <ion-text color="medium">I agree to the <a href="https://api.prs.jorycooper.com/w/terms-and-conditions" target="_blank">Terms & Conditions</a> and <a href="https://api.prs.jorycooper.com/w/privacy-policy" target="_blank">Privacy Policy</a></ion-text>
+  </div>
+
+  <div class="ion-padding-start ion-padding-end mb-4 mt-3">
+    <ion-button type="submit" expand="block" [disabled]="pendingRequests.hasPendingRequests">Get started</ion-button>
+  </div>
+
+  <div class="mb-4 ion-text-center">
+    <ion-button (click)="onHelp()" fill="clear" size="small" color="medium" [disabled]="pendingRequests.hasPendingRequests">Support</ion-button>
+  </div>
+</form>
+
+

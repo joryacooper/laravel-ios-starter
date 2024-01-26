@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-grid>
+        <ion-row class="ion-text-center">
+          <ion-input
+            [autofocus]="true"
+            [autocapitalize]="true"
+            formControlName="name"
+            class="fs-2"
+            placeholder="Article name"></ion-input>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-textarea
+        class="fs-small"
+        formControlName="notes"
+        aria-label="Description"
+        placeholder="Description"
+        autocapitalize="sentences"
+        [autoGrow]="true"
+        [maxlength]="255"
+      />
+    </ion-item>
+  </ion-list>
+</form>

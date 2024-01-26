@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/settings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-input
+          class="pb-2"
+          label="Your email"
+          type="email"
+          labelPlacement="stacked"
+          formControlName="email"
+          ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button *ngIf="form.dirty" type="submit" expand="block" class="ion-padding-horizontal" [disabled]="pendingRequests.hasPendingRequests">Update profile</ion-button>
+  </form>
+
+  <div class="ion-padding mt-4">
+    <ion-button (click)="onDelete()" color="danger" expand="block">Delete account</ion-button>
+  </div>
+</ion-content>

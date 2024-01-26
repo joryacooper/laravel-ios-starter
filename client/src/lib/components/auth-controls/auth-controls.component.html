@@ -1,0 +1,43 @@
+<ion-footer *ngIf="!auth.isLoggedIn">
+  <ion-toolbar class="ion-text-center p-3 pb-4">
+    <ion-button id="open-register" expand="block">
+      Create account
+      @if(!environment.production){
+        [Dev]
+      }
+    </ion-button>
+    <ion-button id="open-login" fill="clear" size="small">Log in</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-modal *ngIf="!auth.isLoggedIn" #registerModal trigger="open-register" [presentingElement]="elements.getStartedPage()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="onCloseRegister()" [disabled]="pendingRequests.hasPendingRequests">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Create an account</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <app-register-form (registrationComplete)="onRegistrationComplete()"/>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal *ngIf="!auth.isLoggedIn" #loginModal trigger="open-login" [presentingElement]="elements.getStartedPage()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="onCloseLogin()" [disabled]="pendingRequests.hasPendingRequests">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Log in</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <app-login-form (loginComplete)="onLoginComplete()"/>
+    </ion-content>
+  </ng-template>
+</ion-modal>
