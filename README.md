@@ -46,18 +46,19 @@ We will get the API server running on your computer for development.
      laravelsail/php82-composer:latest \
      composer install --ignore-platform-reqs
    ```
-3. Start the docker containers (this might take a while the first time)
-    ```shell
-    ./vendor/bin/sail up -d
-   ```
-4. Initialize laravel application
+3. Initialize laravel application
     ```shell
     cp .env.example .env
    ```
+4. Start the docker containers (this might take a while the first time)
     ```shell
+    ./vendor/bin/sail up -d
+   ```
+5. Generate APP_KEY
+   ```shell
    ./vendor/bin/sail artisan key:generate
-    ```
-5. Run DB migrations
+   ```
+6. Run DB migrations
     ```shell
     ./vendor/bin/sail artisan migrate
    ```

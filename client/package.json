@@ -11,6 +11,7 @@
     "start:ios:prod": "ionic cap run ios -l --external --prod",
     "build:ios:prod": "ionic cap build ios --prod"
   },
+  "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.2",
     "@angular/common": "^17.0.2",
