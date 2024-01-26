@@ -46,7 +46,7 @@ We will get the API server running on your computer for development.
      laravelsail/php82-composer:latest \
      composer install --ignore-platform-reqs
    ```
-3. Initialize laravel application
+3. Copy .env
     ```shell
     cp .env.example .env
    ```
